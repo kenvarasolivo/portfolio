@@ -187,6 +187,10 @@ export const translations = {
     en: 'A language app that builds your flashcards, your reading, and a chat coach that corrects you as you go.',
     de: 'Eine Sprach-App, die deine Karteikarten und Lesetexte erstellt - plus ein Chat-Coach, der dich nebenbei korrigiert.',
   },
+  'work.liftide.body': {
+    en: "A gym companion for logging sets, tracking strength progress, and seeing which muscles you've trained on an interactive body map.",
+    de: 'Eine Fitness-App, um Trainingssätze zu protokollieren, Kraftfortschritte zu verfolgen und trainierte Muskeln auf einer interaktiven Körperkarte zu sehen.',
+  },
   'work.chatbot.body': {
     en: "Rebuilt a university chatbot's frontend with a 10-person team, so answers stream in as they're written instead of landing all at once.",
     de: 'Frontend eines Uni-Chatbots im 10-köpfigen Team neu gebaut - Antworten erscheinen jetzt beim Schreiben statt alle auf einmal.',

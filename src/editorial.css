@@ -401,6 +401,9 @@ a {
 [data-project="fluen"] {
   --project-bg: #2d58bd;
 }
+[data-project="liftide"] {
+  --project-bg: #392c23;
+}
 [data-project="fujinohana"] {
   --project-bg: #6d2422;
 }
