@@ -9,18 +9,10 @@ if ('IntersectionObserver' in window && 'animate' in Element.prototype) {
       if (!entry.isIntersecting) continue;
       observer.unobserve(entry.target);
       if (reducedMotion.matches) continue;
-      const animation = entry.target.animate(
-        [
-          { opacity: 0, transform: 'translateY(14px)' },
-          { opacity: 1, transform: 'translateY(0)' },
-        ],
-        {
-          duration: 480,
-          delay: Math.min(stagger++ * 55, 165),
-          easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
-          fill: 'backwards',
-        },
-      );
+      entry.target.style.setProperty('--entrance-delay', `${Math.min(stagger++ * 70, 210)}ms`);
+      entry.target.classList.add('enters-view');
+      const animation = entry.target.getAnimations()[0];
+      if (!animation) continue;
       animations.add(animation);
       animation.finished.then(
         () => animations.delete(animation),
@@ -30,9 +22,10 @@ if ('IntersectionObserver' in window && 'animate' in Element.prototype) {
   }, { threshold: 0, rootMargin: '0px 0px -32px 0px' });
 
   document.querySelectorAll([
-    '.section-heading', '.work-item', '.personal-layout', '.story-layout',
+    '.section-heading > *', '.work-image', '.work-caption', '.work-description',
+    '.personal-photo', '.personal-copy > *', '.story-copy > *', '.childhood-photo',
     '.journey-heading', '.journey-place', '.values-grid > div',
-    '.approach-list article', '.contact-title', '.case-story-grid',
+    '.approach-section h2', '.approach-list article > *', '.contact-title', '.contact-bottom > *', '.case-story-grid',
     '.case-decision-grid article', '.case-close-grid',
   ].join(',')).forEach((element) => observer.observe(element));
 
