@@ -377,6 +377,9 @@ a {
 [data-project="chattrolley"] {
   --project-bg: #8bcbe8;
 }
+[data-project="meridian"] {
+  --project-bg: #b4c5d5;
+}
 [data-project="questime"] {
   --project-bg: #1746b7;
 }
@@ -384,7 +387,7 @@ a {
   --project-bg: #c4d8cf;
 }
 [data-project="align"] {
-  --project-bg: #c6dbf4;
+  --project-bg: #00071a;
 }
 [data-project="chatbot"] {
   --project-bg: #35383b;
@@ -399,10 +402,10 @@ a {
   --project-bg: #263b4b;
 }
 [data-project="fluen"] {
-  --project-bg: #2d58bd;
+  --project-bg: #cdddf4;
 }
 [data-project="liftide"] {
-  --project-bg: #392c23;
+  --project-bg: #080705;
 }
 [data-project="fujinohana"] {
   --project-bg: #6d2422;

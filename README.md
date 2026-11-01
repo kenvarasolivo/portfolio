@@ -2,7 +2,7 @@
 
 ![Portfolio screenshot](docs/screenshot.png)
 
-The personal portfolio of Kenvara Solivo Lwie, a Computer Science student and software engineer building full-stack products with Applied AI. Main, Archive, and About me share an editorial design in warm white, black, and dark blue. The homepage leads with Show Up and Chattrolley, followed by Questime and Robustabgabe.
+The personal portfolio of Kenvara Solivo Lwie, a Computer Science student and software engineer building full-stack products with Applied AI. Main, Archive, and About me share an editorial design in warm white, black, and dark blue. The homepage leads with Show Up and Fluen, followed by Chattrolley and Meridian.
 
 ---
 

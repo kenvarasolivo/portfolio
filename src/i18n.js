@@ -9,7 +9,7 @@ export const translations = {
   'edit.main': { en: 'Main', de: 'Start' },
   'edit.archive': { en: 'Archive', de: 'Archiv' },
   'edit.next': { en: 'Have something in mind?', de: 'Eine Idee im Kopf?' },
-  'edit.build': { en: "Let's build.", de: 'Lass uns bauen.' },
+  'edit.build': { en: 'Kenvara.', de: 'Kenvara.' },
   'edit.top': { en: 'Back to top ↑', de: 'Nach oben ↑' },
   'edit.cat.all': { en: 'All', de: 'Alle' },
   'edit.cat.products': { en: 'Products', de: 'Produkte' },
@@ -179,6 +179,10 @@ export const translations = {
     de: 'Nutzt agentische KI, um Abgaben automatisch anhand von Bewertungskriterien zu prüfen und Feedback zu entwerfen.',
   },
   'work.robustabgabe.type': { en: 'FH Aachen · Practice project', de: 'FH Aachen · Praxisprojekt' },
+  'work.meridian.body': {
+    en: 'A codebase explorer prototype with interactive architecture maps, source walkthroughs, and dependency tracing.',
+    de: 'Ein Prototyp zur Erkundung von Codebasen mit interaktiven Architekturkarten, Quellcode-Walkthroughs und Abhängigkeitsanalyse.',
+  },
   'work.wearframe.body': {
     en: 'A personal exploration in making it easier to build outfits from clothes you already own.',
     de: 'Eine persönliche Exploration, die dabei hilft, Outfits aus der eigenen Garderobe zusammenzustellen.',
