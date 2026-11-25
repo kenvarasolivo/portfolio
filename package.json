@@ -11,6 +11,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "check:content": "node scripts/check-pages.mjs",
+    "generate:studies": "node scripts/generate-case-studies.mjs",
     "optimize-images": "node scripts/optimize-images.mjs"
   },
   "devDependencies": {

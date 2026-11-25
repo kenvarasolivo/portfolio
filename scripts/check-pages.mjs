@@ -2,10 +2,17 @@ import { readFile, access } from 'node:fs/promises';
 import path from 'node:path';
 import { translations } from '../src/i18n.js';
 
-const files = ['index.html', 'projects.html', 'about.html', 'show-up.html', 'questime.html', 'chattrolley.html'];
+const files = ['index.html', 'projects.html', 'about.html', 'show-up.html', 'questime.html', 'chattrolley.html', 'fh-chatbot.html', 'automated-grading.html', 'alur-sekolah.html'];
 const issues = [];
 for (const file of files) {
   const html = await readFile(file, 'utf8');
+  if (html.includes('src="/page-ready.js"') &&
+      (!html.includes('class="page-loader"') || !html.includes('class="page-loader-line"'))) {
+    issues.push(`${file}: page-ready.js requires the shared loading curtain and progress line`);
+  }
+  for (const [article] of html.matchAll(/<article\b[^>]*data-project="[^"]+"[\s\S]*?<\/article>/g)) {
+    if (!/<h3\b/.test(article)) issues.push(`${file}: project card missing a title`);
+  }
   for (const [, key] of html.matchAll(/data-i18n="([^"]+)"/g)) {
     if (!translations[key]?.en || !translations[key]?.de) issues.push(`${file}: missing translation ${key}`);
   }

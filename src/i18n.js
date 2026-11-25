@@ -5,7 +5,12 @@
    <br>…) - they are applied with innerHTML, so keep the markup trusted/static.
    Elements opt in via a `data-i18n="key"` attribute in index.html.
    ─────────────────────────────────────────────────────────────────────── */
+import { studyTranslations } from './study-content.js';
+import { projectDateTranslations } from './project-dates.js';
+
 export const translations = {
+  ...studyTranslations,
+  ...projectDateTranslations,
   'edit.main': { en: 'Main', de: 'Start' },
   'edit.archive': { en: 'Archive', de: 'Archiv' },
   'edit.next': { en: 'Have something in mind?', de: 'Eine Idee im Kopf?' },

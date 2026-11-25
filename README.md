@@ -2,7 +2,7 @@
 
 ![Portfolio screenshot](docs/screenshot.png)
 
-The personal portfolio of Kenvara Solivo Lwie, a Computer Science student and software engineer building full-stack products with Applied AI. Main, Archive, and About me share an editorial design in warm white, black, and dark blue. The homepage leads with Show Up and Fluen, followed by Chattrolley and Meridian.
+The personal portfolio of Kenvara Solivo Lwie, a Computer Science student and software engineer building full-stack products with Applied AI. Main, Archive, and About me share a white, black, and dark-blue editorial design. The homepage features Automated Grading, Alur Sekolah, Meridian, and Show Up. The archive defaults to category sections, with an optional latest-first view and context filters in both views.
 
 ---
 
@@ -10,9 +10,15 @@ The personal portfolio of Kenvara Solivo Lwie, a Computer Science student and so
 
 *   **Responsive Design:** Fully optimized for mobile, tablet, and desktop views.
 *   **Bilingual (EN / DE):** In-page language switch powered by a lightweight `data-i18n` system - no reload, no framework.
-*   **Project-led homepage:** Selected work follows the hero, with clear paths to contact and three focused case studies.
-*   **Responsive interactions:** Keyboard navigation, project category filters, always-visible mobile navigation, and reduced-motion support.
+*   **Project-led homepage:** Selected work follows the hero, with clear paths to contact and six focused case studies.
+*   **Responsive interactions:** Keyboard navigation, project context filters, interactive case-study walkthroughs, always-visible mobile navigation, and reduced-motion support.
 *   **Fast & SEO-friendly:** Vite-built static output, optimized images (`sharp`), lazy-loaded assets, and Open Graph + meta tags for rich link previews.
+
+---
+
+## Editing the new case studies
+
+The FH Aachen Chatbot, Automated Grading, and Alur Sekolah case studies use bilingual content in `src/study-content.js`. After editing it, run `npm run generate:studies` to update their static HTML, then `npm run check:content`. The generator includes the shared loading curtain required by `page-ready.js`. The generated HTML remains readable without JavaScript; `src/study-workflow.js` enhances the workflow controls. Category sections and their card order are maintained in `projects.html`; `src/project-dates.js` supplies bilingual date labels and the latest-first order. Existing card and case-study date text is static HTML with translation keys, so update its English fallback when editing a date label.
 
 ---
 

@@ -1,5 +1,6 @@
 import { translations } from "./i18n.js";
 import "./motion.js";
+import { projectLatestOrder } from './project-dates.js';
 
 let saved;
 try {
@@ -58,11 +59,42 @@ document.querySelectorAll("[data-filter]").forEach((button) =>
     document.querySelectorAll("[data-category]").forEach((card) => {
       card.hidden =
         button.dataset.filter !== "all" &&
-        card.dataset.category !== button.dataset.filter;
+        card.dataset.context !== button.dataset.filter;
+    });
+    document.querySelectorAll('[data-project-group]').forEach((group) => {
+      group.hidden = ![...group.querySelectorAll('[data-category]')].some((card) => !card.hidden);
     });
     updateCount();
   }),
 );
+
+const categoryGroups = document.querySelector('[data-category-groups]');
+const dateGrid = document.querySelector('[data-date-grid]');
+if (categoryGroups && dateGrid) {
+  // Move the same cards so reading order, keyboard order and visual order agree.
+  const cards = [...categoryGroups.querySelectorAll('article[data-project]')];
+  const homeGrid = new Map(cards.map(card => [card, card.parentElement]));
+  const ranks = new Map(projectLatestOrder.map((id, index) => [id, index]));
+  const byLatest = [...cards].sort((a, b) =>
+    (ranks.get(a.dataset.project) ?? Infinity) - (ranks.get(b.dataset.project) ?? Infinity));
+
+  document.querySelector('[data-project-sort]').hidden = false;
+  document.querySelectorAll('[data-sort]').forEach(button => {
+    button.addEventListener('click', () => {
+      const isDate = button.dataset.sort === 'date';
+      const ordered = isDate ? byLatest : cards;
+      ordered.forEach(card => (isDate ? dateGrid : homeGrid.get(card)).append(card));
+      categoryGroups.hidden = isDate;
+      dateGrid.hidden = !isDate;
+      document.querySelectorAll('[data-sort]').forEach(control =>
+        control.setAttribute('aria-pressed', String(control === button)));
+      document.querySelectorAll('[data-project-group]').forEach(group => {
+        group.hidden = ![...group.querySelectorAll('[data-category]')].some(card => !card.hidden);
+      });
+      updateCount();
+    });
+  });
+}
 const nav = document.querySelector(".editorial-nav");
 const updateNav = () =>
   nav?.classList.toggle("is-scrolled", window.scrollY > 10);

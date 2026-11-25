@@ -62,67 +62,225 @@
         <div class="page-intro">
 
           <h1 data-i18n="edit.archive">Archive</h1>
-          <p data-i18n="projects.subtitle">
-            A wider look at the products, collaborations, and visual experiments
-            I’ve built.
-          </p>
+          <p data-i18n="groups.intro">Start with the selected case studies, or explore by context: team, university, client and community, independent projects, and experiments.</p>
+        </div>
+        <div class="archive-sort" data-project-sort hidden role="group" aria-label="Sort projects">
+          <span data-i18n="sort.label">Sort by</span>
+          <button type="button" data-sort="category" aria-pressed="true" data-i18n="sort.category">Category</button>
+          <button type="button" data-sort="date" aria-pressed="false" data-i18n="sort.date">Latest first</button>
         </div>
         <div class="archive-toolbar">
-          <div
-            class="archive-filters"
-            role="group"
-            aria-label="Filter projects"
-          >
-            <button
-              type="button"
-              data-filter="all"
-              aria-pressed="true"
-              data-i18n="edit.cat.all"
-            >
-              All</button
-            ><button
-              type="button"
-              data-filter="products"
-              aria-pressed="false"
-              data-i18n="edit.cat.products"
-            >
-              Products</button
-            ><button
-              type="button"
-              data-filter="ai"
-              aria-pressed="false"
-              data-i18n="edit.cat.ai"
-            >
-              Applied AI</button
-            ><button
-              type="button"
-              data-filter="data"
-              aria-pressed="false"
-              data-i18n="edit.cat.data"
-            >
-              Data</button
-            ><button
-              type="button"
-              data-filter="collaboration"
-              aria-pressed="false"
-              data-i18n="edit.cat.collaboration"
-            >
-              Collaborations</button
-            ><button
-              type="button"
-              data-filter="play"
-              aria-pressed="false"
-              data-i18n="edit.cat.play"
-            >
-              Built for fun
-            </button>
-          </div>
+          <div class="archive-filters" role="group" aria-label="Filter projects by context">
+  <button type="button" data-filter="all" aria-pressed="true" data-i18n="groups.all">All projects</button>
+  <button type="button" data-filter="team" aria-pressed="false" data-i18n="groups.team">Team projects</button>
+<button type="button" data-filter="school" aria-pressed="false" data-i18n="groups.school">University projects</button>
+<button type="button" data-filter="client" aria-pressed="false" data-i18n="groups.client">Client & community work</button>
+<button type="button" data-filter="solo" aria-pressed="false" data-i18n="groups.solo">Independent projects</button>
+<button type="button" data-filter="fun" aria-pressed="false" data-i18n="groups.fun">For fun</button>
+</div>
           <span class="label" data-project-count aria-live="polite"
-            >19 projects</span
+            >20 projects</span
           >
         </div>
-        <div class="work-grid archive-grid">
-          <article
+
+        <div data-category-groups>
+        <section class="project-group project-group--team" id="team-projects" data-project-group data-group="team" aria-labelledby="team-heading">
+          <div class="project-group-heading"><h2 id="team-heading" data-i18n="groups.team">Team projects</h2><p data-i18n="groups.team.body">Shared products. My role spans product decisions, design, and full-stack development.</p></div>
+          <div class="work-grid archive-grid"><article data-context="team" data-project="alur" class="work-item" data-category="products">
+  <a href="alur-sekolah.html">
+    <div class="work-image work-image--products"><img src="images/project/alurssekolah.webp" alt="Alur Sekolah website connecting school and home" loading="lazy" decoding="async" /><span class="image-arrow" aria-hidden="true">↗</span></div>
+    <div class="work-caption"><h3>Alur Sekolah</h3><span class="work-kind" data-i18n="edit.cat.products">Products</span></div><p class="work-date"><time datetime="2026" data-i18n="date.alur">2026</time></p>
+    <div class="work-description"><p data-i18n="work.alur.body">A school platform connecting teachers and families. I lead product and design direction and built the full-stack website in a four-person team.</p><span class="work-depth" data-i18n="study.case">Case study ↗</span></div>
+  </a>
+</article>
+<article data-context="team"
+            data-project="showup"
+            class="work-item"
+            data-category="products"
+          >
+            <a href="show-up.html" class="flex flex-1 flex-col"
+              ><div class="work-image work-image--products">
+                <img
+                  src="images/project/showup.webp"
+                  alt="Show Up social app preview"
+                  loading="lazy"
+                  decoding="async"
+                /><span class="image-arrow" aria-hidden="true">↗</span>
+              </div>
+              <div class="work-caption">
+                <h3>Show Up</h3>
+                <span class="work-kind" data-i18n="edit.cat.products"
+                  >Products</span
+                >
+              </div><p class="work-date"><time datetime="2026-07" data-i18n="date.showup">Jul 2026 – Present</time></p>
+              <div class="work-description">
+                <p data-i18n="work.showup.body">
+                  A social app for discovering plans and meeting people
+                  offline. Built with a small team, with my work spanning
+                  product, UX, and full-stack development.
+                </p><span class="work-depth" data-i18n="study.case">Case study ↗</span>
+              </div></a
+            >
+          </article></div>
+        </section>
+
+        <section class="project-group project-group--school" id="school-projects" data-project-group data-group="school" aria-labelledby="school-heading">
+          <div class="project-group-heading"><h2 id="school-heading" data-i18n="groups.school">University projects</h2><p data-i18n="groups.school.body">Applied AI and engineering work at FH Aachen, with my contribution explained in depth.</p></div>
+          <div class="work-grid archive-grid"><article data-context="school"
+            data-project="robustabgabe"
+            class="work-item"
+            data-category="ai"
+          ><a href="automated-grading.html">
+            <div class="work-image work-image--ai">
+              <img
+                src="images/project/robustabgabe.webp"
+                alt="Automated Grading submission review platform"
+                loading="lazy"
+                decoding="async"
+              /><span class="image-arrow" aria-hidden="true">↗</span>
+            </div>
+            <div class="work-caption">
+              <h3>Automated Grading</h3>
+              <span class="work-kind" data-i18n="edit.cat.ai">Applied AI</span>
+            </div><p class="work-date"><time datetime="2026" data-i18n="date.robustabgabe">2026</time></p>
+            <div class="work-description">
+              <p data-i18n="work.grading.updated">
+                A solo-built grading workflow: isolated code tests, rubric-based AI assessment, and feedback for lecturers to review and approve.
+              </p><span class="work-depth" data-i18n="study.case">Case study ↗</span>
+            </div>
+          </a></article>
+<article data-context="school"
+            data-project="chatbot"
+            class="work-item"
+            data-category="products"
+          ><a href="fh-chatbot.html">
+            <div class="work-image work-image--products">
+              <img
+                src="images/project/chatbot.webp"
+                alt="FH Aachen Chatbot - AI chat interface preview"
+                loading="lazy"
+                decoding="async"
+              /><span class="image-arrow" aria-hidden="true">↗</span>
+            </div>
+            <div class="work-caption">
+              <h3>FH Aachen Chatbot</h3>
+              <span class="work-kind" data-i18n="edit.cat.products"
+                >Products</span
+              >
+            </div><p class="work-date"><time datetime="2025-10" data-i18n="date.chatbot">Oct 2025 – Feb 2026</time></p>
+            <div class="work-description">
+              <p data-i18n="work.chatbot.updated">
+                A course-grounded AI tutor. In the university team, I modularised the Vue frontend, integrated APIs, and improved streaming and chat states.
+              </p><span class="work-depth" data-i18n="study.case">Case study ↗</span>
+            </div>
+          </a></article></div>
+        </section>
+
+        <section class="project-group project-group--client" id="client-projects" data-project-group data-group="client" aria-labelledby="client-heading">
+          <div class="project-group-heading"><h2 id="client-heading" data-i18n="groups.client">Client & community work</h2><p data-i18n="groups.client.body">Websites and tools built around the needs of a business or organisation.</p></div>
+          <div class="work-grid archive-grid"><article data-context="client"
+            data-project="vocmel"
+            class="work-item"
+            data-category="collaboration"
+          >
+            <a
+              href="https://vocmel-original.vercel.app/"
+              target="_blank"
+              rel="noopener"
+              class="flex flex-1 flex-col"
+              ><div class="work-image work-image--collaboration">
+                <img
+                  src="images/project/vocmel.webp"
+                  alt="Vocmel Original - heritage footwear and goods website preview"
+                  loading="lazy"
+                  decoding="async"
+                /><span class="image-arrow" aria-hidden="true">↗</span>
+              </div>
+              <div class="work-caption">
+                <h3>Vocmel Original</h3><span class="project-partner">Vocmel × Kenvara</span>
+                <span class="work-kind" data-i18n="edit.cat.collaboration"
+                  >Collaboration</span
+                >
+              </div><p class="work-date"><time datetime="2026" data-i18n="date.vocmel">2026</time></p>
+              <div class="work-description">
+                <p data-i18n="work.vocmel.body">
+                  A bilingual storefront for heritage footwear and goods, with a
+                  browsable catalog, product details, and buying guidance.
+                </p>
+              </div></a
+            >
+          </article>
+<article data-context="client"
+            data-project="fujinohana"
+            class="work-item"
+            data-category="collaboration"
+          >
+            <a
+              href="https://fujinohana-bonuskarte.vercel.app/"
+              target="_blank"
+              rel="noopener"
+              class="flex flex-1 flex-col"
+              ><div class="work-image work-image--collaboration">
+                <img
+                  src="images/project/fujinohana.webp"
+                  alt="Fuji no Hana VIP Karte - digital loyalty card preview"
+                  loading="lazy"
+                  decoding="async"
+                /><span class="image-arrow" aria-hidden="true">↗</span>
+              </div>
+              <div class="work-caption">
+                <h3>VIP Karte</h3><span class="project-partner">Kenvara × Fuji no Hana</span>
+                <span class="work-kind" data-i18n="edit.cat.collaboration"
+                  >Collaboration</span
+                >
+              </div><p class="work-date"><time datetime="2026" data-i18n="date.fujinohana">2026</time></p>
+              <div class="work-description">
+                <p data-i18n="work.fujinohana.body">
+                  A loyalty card for a ramen restaurant - guests collect points
+                  at the counter, and the staff run the offers themselves
+                  without touching the code.
+                </p>
+              </div></a
+            >
+          </article>
+<article data-context="client"
+            data-project="igta"
+            class="work-item"
+            data-category="collaboration"
+          >
+            <a
+              href="https://igta-prospecting-pipeline.vercel.app/"
+              target="_blank"
+              rel="noopener"
+              class="flex flex-1 flex-col"
+              ><div class="work-image work-image--collaboration">
+                <img
+                  src="images/project/igta.webp"
+                  alt="AIESEC iGTA Prospecting Pipeline - HubSpot lead generation dashboard preview"
+                  loading="lazy"
+                  decoding="async"
+                /><span class="image-arrow" aria-hidden="true">↗</span>
+              </div>
+              <div class="work-caption">
+                <h3>Prospecting Pipeline</h3><span class="project-partner">Kenvara × AIESEC</span>
+                <span class="work-kind" data-i18n="edit.cat.collaboration"
+                  >Collaboration</span
+                >
+              </div><p class="work-date"><time datetime="2026" data-i18n="date.igta">2026</time></p>
+              <div class="work-description">
+                <p data-i18n="work.igta.body">
+                  Finds companies hiring around Aachen, digs out their real
+                  contact details, and hands the team a HubSpot-ready file -
+                  three minutes instead of an afternoon.
+                </p>
+              </div></a
+            >
+          </article></div>
+        </section>
+
+        <section class="project-group project-group--solo" id="solo-projects" data-project-group data-group="solo" aria-labelledby="solo-heading">
+          <div class="project-group-heading"><h2 id="solo-heading" data-i18n="groups.solo">Independent projects</h2><p data-i18n="groups.solo.body">Self-directed products and prototypes, exploring ideas through working software.</p></div>
+          <div class="work-grid archive-grid"><article data-context="solo"
             data-project="meridian"
             class="work-item"
             data-category="products"
@@ -145,7 +303,7 @@
                 <span class="work-kind" data-i18n="edit.cat.products"
                   >Products</span
                 >
-              </div>
+              </div><p class="work-date"><time datetime="2026" data-i18n="date.meridian">2026</time></p>
               <div class="work-description">
                 <p data-i18n="work.meridian.body">
                   A codebase explorer prototype with interactive architecture maps,
@@ -154,90 +312,7 @@
               </div></a
             >
           </article>
-          <article
-            data-project="robustabgabe"
-            class="work-item"
-            data-category="ai"
-          >
-            <div class="work-image work-image--ai">
-              <img
-                src="images/project/robustabgabe.webp"
-                alt="Automated Grading submission review platform"
-                loading="lazy"
-                decoding="async"
-              /><span class="image-note" data-i18n="badge.development"
-                >In development</span
-              >
-            </div>
-            <div class="work-caption">
-              <h3>Automated Grading</h3>
-              <span class="work-kind" data-i18n="edit.cat.ai">Ai</span>
-            </div>
-            <div class="work-description">
-              <p data-i18n="work.robustabgabe.body">
-                Uses agentic AI to automate assignment review, assess student
-                submissions against rubrics, and draft feedback.
-              </p>
-            </div>
-          </article>
-          <article
-            data-project="chattrolley"
-            class="work-item"
-            data-category="ai"
-          >
-            <a href="chattrolley.html" class="flex flex-1 flex-col"
-              ><div class="work-image work-image--ai">
-                <img
-                  src="images/project/chattrolley.webp"
-                  alt="Chattrolley - business-specific AI assistant preview"
-                  loading="lazy"
-                  decoding="async"
-                /><span class="image-arrow" aria-hidden="true">↗</span>
-              </div>
-              <div class="work-caption">
-                <h3>Chattrolley</h3>
-                <span class="work-kind" data-i18n="edit.cat.ai">Ai</span>
-              </div>
-              <div class="work-description">
-                <p data-i18n="work.chattrolley.body">
-                  Specialized AI assistants for small and medium businesses,
-                  grounded in their own product data to answer customer
-                  questions and recommend relevant products.
-                </p>
-              </div></a
-            >
-          </article>
-          <article
-            data-project="stackpilot"
-            class="work-item"
-            data-category="ai"
-          >
-            <a
-              href="https://stackpilot-mu.vercel.app/"
-              target="_blank"
-              rel="noopener"
-              class="flex flex-1 flex-col"
-              ><div class="work-image work-image--ai">
-                <img
-                  src="images/project/stackpilot.webp"
-                  alt="StackPilot - agentic documentation tutor preview"
-                  loading="lazy"
-                  decoding="async"
-                /><span class="image-arrow" aria-hidden="true">↗</span>
-              </div>
-              <div class="work-caption">
-                <h3>StackPilot</h3>
-                <span class="work-kind" data-i18n="edit.cat.ai">Ai</span>
-              </div>
-              <div class="work-description">
-                <p data-i18n="work.stackpilot.body">
-                  Turns any documentation into a guided lesson - an AI agent
-                  researches it, writes it, and checks its own sources.
-                </p>
-              </div></a
-            >
-          </article>
-          <article data-project="align" class="work-item" data-category="ai">
+<article data-context="solo" data-project="align" class="work-item" data-category="ai">
             <a
               href="https://align-engine.vercel.app/"
               target="_blank"
@@ -254,7 +329,7 @@
               <div class="work-caption">
                 <h3>Align</h3>
                 <span class="work-kind" data-i18n="edit.cat.ai">Ai</span>
-              </div>
+              </div><p class="work-date"><time datetime="2026" data-i18n="date.align">2026</time></p>
               <div class="work-description">
                 <p data-i18n="work.align.body">
                   Reads a CV against a job description, shows where the real
@@ -264,65 +339,7 @@
               </div></a
             >
           </article>
-          <article
-            data-project="questime"
-            class="work-item"
-            data-category="products"
-          >
-            <a href="questime.html" class="flex flex-1 flex-col"
-              ><div class="work-image work-image--products">
-                <img
-                  src="images/project/questime.webp"
-                  alt="Questime daily quests and companion app"
-                  loading="lazy"
-                  decoding="async"
-                /><span class="image-arrow" aria-hidden="true">↗</span>
-              </div>
-              <div class="work-caption">
-                <h3>Questime</h3>
-                <span class="work-kind" data-i18n="edit.cat.products"
-                  >Products</span
-                >
-              </div>
-              <div class="work-description">
-                <p data-i18n="work.questime.body">
-                  I'm actively building a playful way to turn everyday growth
-                  into an adventure, with daily quests, six life paths, and
-                  collectible companions.
-                </p>
-              </div></a
-            >
-          </article>
-          <article
-            data-project="showup"
-            class="work-item"
-            data-category="products"
-          >
-            <a href="show-up.html" class="flex flex-1 flex-col"
-              ><div class="work-image work-image--products">
-                <img
-                  src="images/project/showup.webp"
-                  alt="Show Up social app preview"
-                  loading="lazy"
-                  decoding="async"
-                /><span class="image-arrow" aria-hidden="true">↗</span>
-              </div>
-              <div class="work-caption">
-                <h3>Show Up</h3>
-                <span class="work-kind" data-i18n="edit.cat.products"
-                  >Products</span
-                >
-              </div>
-              <div class="work-description">
-                <p data-i18n="work.showup.body">
-                  A social app for discovering plans and meeting people
-                  offline. Built with a small team, with my work spanning
-                  product, UX, and full-stack development.
-                </p>
-              </div></a
-            >
-          </article>
-          <article
+<article data-context="solo"
             data-project="fluen"
             class="work-item"
             data-category="products"
@@ -345,7 +362,7 @@
                 <span class="work-kind" data-i18n="edit.cat.products"
                   >Products</span
                 >
-              </div>
+              </div><p class="work-date"><time datetime="2026" data-i18n="date.fluen">2026</time></p>
               <div class="work-description">
                 <p data-i18n="work.fluen.body">
                   A language app that builds your flashcards, your reading, and
@@ -354,7 +371,7 @@
               </div></a
             >
           </article>
-          <article
+<article data-context="solo"
             data-project="liftide"
             class="work-item"
             data-category="products"
@@ -377,7 +394,7 @@
                 <span class="work-kind" data-i18n="edit.cat.products"
                   >Products</span
                 >
-              </div>
+              </div><p class="work-date"><time datetime="2026" data-i18n="date.liftide">2026</time></p>
               <div class="work-description">
                 <p data-i18n="work.liftide.body">
                   A gym companion for logging sets, tracking strength progress,
@@ -386,36 +403,93 @@
               </div></a
             >
           </article>
-          <article
-            data-project="chatbot"
+<article data-context="solo"
+            data-project="stackpilot"
+            class="work-item"
+            data-category="ai"
+          >
+            <a
+              href="https://stackpilot-mu.vercel.app/"
+              target="_blank"
+              rel="noopener"
+              class="flex flex-1 flex-col"
+              ><div class="work-image work-image--ai">
+                <img
+                  src="images/project/stackpilot.webp"
+                  alt="StackPilot - agentic documentation tutor preview"
+                  loading="lazy"
+                  decoding="async"
+                /><span class="image-arrow" aria-hidden="true">↗</span>
+              </div>
+              <div class="work-caption">
+                <h3>StackPilot</h3>
+                <span class="work-kind" data-i18n="edit.cat.ai">Ai</span>
+              </div><p class="work-date"><time datetime="2026-06" data-i18n="date.stackpilot">Jun – Jul 2026</time></p>
+              <div class="work-description">
+                <p data-i18n="work.stackpilot.body">
+                  Turns any documentation into a guided lesson - an AI agent
+                  researches it, writes it, and checks its own sources.
+                </p>
+              </div></a
+            >
+          </article>
+<article data-context="solo"
+            data-project="questime"
             class="work-item"
             data-category="products"
           >
-            <div class="work-image work-image--products">
-              <img
-                src="images/project/chatbot.webp"
-                alt="FH Aachen Chatbot - AI chat interface preview"
-                loading="lazy"
-                decoding="async"
-              /><span class="image-note" data-i18n="badge.university"
-                >University project</span
-              >
-            </div>
-            <div class="work-caption">
-              <h3>FH Aachen Chatbot</h3>
-              <span class="work-kind" data-i18n="edit.cat.products"
-                >Products</span
-              >
-            </div>
-            <div class="work-description">
-              <p data-i18n="work.chatbot.body">
-                Rebuilt a university chatbot's frontend with a 10-person team,
-                so answers stream in as they're written instead of landing all
-                at once.
-              </p>
-            </div>
+            <a href="questime.html" class="flex flex-1 flex-col"
+              ><div class="work-image work-image--products">
+                <img
+                  src="images/project/questime.webp"
+                  alt="Questime daily quests and companion app"
+                  loading="lazy"
+                  decoding="async"
+                /><span class="image-arrow" aria-hidden="true">↗</span>
+              </div>
+              <div class="work-caption">
+                <h3>Questime</h3>
+                <span class="work-kind" data-i18n="edit.cat.products"
+                  >Products</span
+                >
+              </div><p class="work-date"><time datetime="2026" data-i18n="date.questime">2026</time></p>
+              <div class="work-description">
+                <p data-i18n="work.questime.body">
+                  I'm actively building a playful way to turn everyday growth
+                  into an adventure, with daily quests, six life paths, and
+                  collectible companions.
+                </p><span class="work-depth" data-i18n="study.case">Case study ↗</span>
+              </div></a
+            >
           </article>
-          <article
+<article data-context="solo"
+            data-project="chattrolley"
+            class="work-item"
+            data-category="ai"
+          >
+            <a href="chattrolley.html" class="flex flex-1 flex-col"
+              ><div class="work-image work-image--ai">
+                <img
+                  src="images/project/chattrolley.webp"
+                  alt="Chattrolley - business-specific AI assistant preview"
+                  loading="lazy"
+                  decoding="async"
+                /><span class="image-arrow" aria-hidden="true">↗</span>
+              </div>
+              <div class="work-caption">
+                <h3>Chattrolley</h3>
+                <span class="work-kind" data-i18n="edit.cat.ai">Ai</span>
+              </div><p class="work-date"><time datetime="2026" data-i18n="date.chattrolley">2026</time></p>
+              <div class="work-description">
+                <p data-i18n="work.chattrolley.body">
+                  Specialized AI assistants for small and medium businesses,
+                  grounded in their own product data to answer customer
+                  questions and recommend relevant products.
+                </p><span class="work-depth" data-i18n="study.case">Case study ↗</span>
+              </div></a
+            >
+          </article>
+<article data-context="solo"
             data-project="watchflow"
             class="work-item"
             data-category="data"
@@ -436,7 +510,7 @@
               <div class="work-caption">
                 <h3>Watchflow</h3>
                 <span class="work-kind" data-i18n="edit.cat.data">Data</span>
-              </div>
+              </div><p class="work-date"><time datetime="2026" data-i18n="date.watchflow">2026</time></p>
               <div class="work-description">
                 <p data-i18n="work.watchflow.body">
                   Tracks the stocks you follow and refreshes itself every
@@ -445,7 +519,7 @@
               </div></a
             >
           </article>
-          <article data-project="dataco" class="work-item" data-category="data">
+<article data-context="solo" data-project="dataco" class="work-item" data-category="data">
             <a
               href="https://dataco-analysis.vercel.app/"
               target="_blank"
@@ -462,7 +536,7 @@
               <div class="work-caption">
                 <h3>DataCo</h3>
                 <span class="work-kind" data-i18n="edit.cat.data">Data</span>
-              </div>
+              </div><p class="work-date"><time datetime="2026" data-i18n="date.dataco">2026</time></p>
               <div class="work-description">
                 <p data-i18n="work.dataco.body">
                   180,000 supply-chain orders you can slice any way you like, to
@@ -470,118 +544,12 @@
                 </p>
               </div></a
             >
-          </article>
-          <article
-            data-project="vocmel"
-            class="work-item"
-            data-category="collaboration"
-          >
-            <a
-              href="https://vocmel-original.vercel.app/"
-              target="_blank"
-              rel="noopener"
-              class="flex flex-1 flex-col"
-              ><div class="work-image work-image--collaboration">
-                <img
-                  src="images/project/vocmel.webp"
-                  alt="Vocmel Original - heritage footwear and goods website preview"
-                  loading="lazy"
-                  decoding="async"
-                /><span class="image-arrow" aria-hidden="true">↗</span>
-              </div>
-              <div class="work-caption">
-                <h3>
+          </article></div>
+        </section>
 
-                  <span class="project-partner">Vocmel × Kenvara</span>
-                  Vocmel Original
-                </h3>
-                <span class="work-kind" data-i18n="edit.cat.collaboration"
-                  >Collaboration</span
-                >
-              </div>
-              <div class="work-description">
-                <p data-i18n="work.vocmel.body">
-                  A bilingual storefront for heritage footwear and goods, with a
-                  browsable catalog, product details, and buying guidance.
-                </p>
-              </div></a
-            >
-          </article>
-          <article
-            data-project="fujinohana"
-            class="work-item"
-            data-category="collaboration"
-          >
-            <a
-              href="https://fujinohana-bonuskarte.vercel.app/"
-              target="_blank"
-              rel="noopener"
-              class="flex flex-1 flex-col"
-              ><div class="work-image work-image--collaboration">
-                <img
-                  src="images/project/fujinohana.webp"
-                  alt="Fuji no Hana VIP Karte - digital loyalty card preview"
-                  loading="lazy"
-                  decoding="async"
-                /><span class="image-arrow" aria-hidden="true">↗</span>
-              </div>
-              <div class="work-caption">
-                <h3>
-
-                  <span class="project-partner">Kenvara × Fuji no Hana</span>
-                  VIP Karte
-                </h3>
-                <span class="work-kind" data-i18n="edit.cat.collaboration"
-                  >Collaboration</span
-                >
-              </div>
-              <div class="work-description">
-                <p data-i18n="work.fujinohana.body">
-                  A loyalty card for a ramen restaurant - guests collect points
-                  at the counter, and the staff run the offers themselves
-                  without touching the code.
-                </p>
-              </div></a
-            >
-          </article>
-          <article
-            data-project="igta"
-            class="work-item"
-            data-category="collaboration"
-          >
-            <a
-              href="https://igta-prospecting-pipeline.vercel.app/"
-              target="_blank"
-              rel="noopener"
-              class="flex flex-1 flex-col"
-              ><div class="work-image work-image--collaboration">
-                <img
-                  src="images/project/igta.webp"
-                  alt="AIESEC iGTA Prospecting Pipeline - HubSpot lead generation dashboard preview"
-                  loading="lazy"
-                  decoding="async"
-                /><span class="image-arrow" aria-hidden="true">↗</span>
-              </div>
-              <div class="work-caption">
-                <h3>
-
-                  <span class="project-partner">Kenvara × AIESEC</span>
-                  Prospecting Pipeline
-                </h3>
-                <span class="work-kind" data-i18n="edit.cat.collaboration"
-                  >Collaboration</span
-                >
-              </div>
-              <div class="work-description">
-                <p data-i18n="work.igta.body">
-                  Finds companies hiring around Aachen, digs out their real
-                  contact details, and hands the team a HubSpot-ready file -
-                  three minutes instead of an afternoon.
-                </p>
-              </div></a
-            >
-          </article>
-          <article
+        <section class="project-group project-group--fun" id="fun-projects" data-project-group data-group="fun" aria-labelledby="fun-heading">
+          <div class="project-group-heading"><h2 id="fun-heading" data-i18n="groups.fun">For fun</h2><p data-i18n="groups.fun.body">Smaller experiments in interaction, visuals, and the browser.</p></div>
+          <div class="work-grid archive-grid"><article data-context="fun"
             data-project="elsewhere"
             class="work-item"
             data-category="play"
@@ -602,7 +570,7 @@
               <div class="work-caption">
                 <h3>Elsewhere</h3>
                 <span class="work-kind" data-i18n="edit.cat.play">Play</span>
-              </div>
+              </div><p class="work-date"><time datetime="2026" data-i18n="date.elsewhere">2026</time></p>
               <div class="work-description">
                 <p data-i18n="work.elsewhere.body">
                   An atlas of the world's great cities, ranked and told through
@@ -611,7 +579,7 @@
               </div></a
             >
           </article>
-          <article
+<article data-context="fun"
             data-project="cinescope"
             class="work-item"
             data-category="play"
@@ -632,7 +600,7 @@
               <div class="work-caption">
                 <h3>CineScope</h3>
                 <span class="work-kind" data-i18n="edit.cat.play">Play</span>
-              </div>
+              </div><p class="work-date"><time datetime="2026" data-i18n="date.cinescope">2026</time></p>
               <div class="work-description">
                 <p data-i18n="work.cinescope.body">
                   What's trending in film and games right now, pulled live and
@@ -641,7 +609,7 @@
               </div></a
             >
           </article>
-          <article
+<article data-context="fun"
             data-project="laferrari"
             class="work-item"
             data-category="play"
@@ -662,7 +630,7 @@
               <div class="work-caption">
                 <h3>LaFerrari</h3>
                 <span class="work-kind" data-i18n="edit.cat.play">Play</span>
-              </div>
+              </div><p class="work-date"><time datetime="2026" data-i18n="date.laferrari">2026</time></p>
               <div class="work-description">
                 <p data-i18n="work.laferrari.body">
                   A LaFerrari you can spin around in 3D, lit and animated in the
@@ -671,7 +639,7 @@
               </div></a
             >
           </article>
-          <article
+<article data-context="fun"
             data-project="kanagawa"
             class="work-item"
             data-category="play"
@@ -692,7 +660,7 @@
               <div class="work-caption">
                 <h3>Kanagawa Wave</h3>
                 <span class="work-kind" data-i18n="edit.cat.play">Play</span>
-              </div>
+              </div><p class="work-date"><time datetime="2026" data-i18n="date.kanagawa">2026</time></p>
               <div class="work-description">
                 <p data-i18n="work.kanagawa.body">
                   Hokusai's wave told as a scroll - the video scrubs as you move
@@ -700,8 +668,10 @@
                 </p>
               </div></a
             >
-          </article>
+          </article></div>
+        </section>
         </div>
+        <div class="work-grid archive-grid" data-date-grid hidden></div>
       </section>
     </main>
     <footer id="contact" class="contact-section">

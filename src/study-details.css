@@ -1,0 +1,72 @@
+/* Case studies keep the portfolio frame and let the actual workflow carry the graphics. */
+.study-hero { padding-block: 28px 64px; }
+.study-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 8%; align-items: start; padding-block: 52px 60px; }
+.study-intro h1 { max-width: 670px; font-size: clamp(48px, 6.4vw, 90px); font-weight: 400; line-height: 1.02; letter-spacing: -.065em; text-wrap: balance; }
+.study-intro .case-lede { margin: 0; }
+.study-intro .case-summary { margin-bottom: 28px; }
+.study-cover { margin: 0; }
+.study-cover img { width: 100%; height: auto; aspect-ratio: 2.04; object-fit: contain; background: var(--project-bg, var(--surface)); }
+.study-cover figcaption { margin-top: 14px; max-width: 850px; font-size: 14px; line-height: 1.5; color: var(--muted); }
+.study-workflow { padding-block: 88px; background: var(--surface); }
+.study-workflow h2, .study-contributions h2 { font-size: clamp(32px, 3.2vw, 46px); font-weight: 400; line-height: 1.1; letter-spacing: -.055em; }
+.study-section-intro { max-width: 650px; margin-top: 24px; font-size: 17px; line-height: 1.65; }
+.workflow { display: grid; grid-template-columns: minmax(220px, .7fr) minmax(0, 1.7fr); gap: 40px; margin-top: 48px; align-items: start; }
+.workflow-controls { display: none; }
+.workflow-ready .workflow-controls { display: flex; flex-direction: column; gap: 8px; }
+.workflow-controls button { display: flex; align-items: center; gap: 16px; min-height: 64px; padding: 16px 20px; background: transparent; border: 0; text-align: left; color: var(--ink); font-size: 16px; transition: background 200ms, color 200ms; }
+.workflow-controls button > span:last-child { margin-left: auto; }
+.workflow-controls button[aria-pressed="true"] { background: var(--blue); color: var(--paper); }
+.workflow-controls button:hover:not([aria-pressed="true"]) { background: var(--paper); }
+.workflow-indicator { width: 6px; height: 6px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
+.workflow-stage { background: var(--paper); padding: clamp(24px, 4vw, 56px); min-height: 388px; }
+.workflow:not(.workflow-ready) { display: block; }
+.workflow-map { display: flex; list-style: none; padding: 0; margin: 0 0 40px; gap: 12px; }
+.workflow-map li { flex: 1; position: relative; padding-block: 18px 0; font-size: 13px; line-height: 1.5; color: var(--muted); }
+.workflow-map li::before { content: ''; position: absolute; inset: 0 0 auto; height: 4px; background: var(--surface); }
+.workflow-map li.is-current { color: var(--blue); }
+.workflow-map li.is-current::before { background: var(--blue); }
+.workflow-panel[hidden] { display: none; }
+.workflow-panel + .workflow-panel:not([hidden]) { margin-top: 32px; }
+.workflow-ready .workflow-panel + .workflow-panel { margin-top: 0; }
+.workflow-artifact { margin: 0 0 24px; color: var(--blue); font-size: 14px; line-height: 1.6; }
+.workflow-panel h3 { font-size: clamp(24px, 2.5vw, 34px); font-weight: 400; line-height: 1.15; letter-spacing: -.04em; margin-bottom: 18px; }
+.workflow-panel > p:last-child { font-size: 17px; line-height: 1.65; max-width: 700px; }
+.study-contributions { background: var(--dark); color: var(--on-dark); padding-block: 96px; }
+.study-contribution-list { margin-top: 56px; display: grid; gap: 44px; }
+.study-contribution-list article { display: grid; grid-template-columns: 1fr 1fr; gap: 8%; }
+.study-contribution-list h3 { font-size: clamp(23px, 2.4vw, 32px); line-height: 1.2; letter-spacing: -.035em; font-weight: 400; }
+.study-contribution-list p { font-size: 17px; line-height: 1.65; color: var(--on-dark-secondary); }
+.study-architecture { display: flex; flex-wrap: wrap; list-style: none; gap: 12px; margin: 48px 0 0; padding: 0; }
+.study-architecture li { display: flex; align-items: center; gap: 24px; font-size: 15px; line-height: 1.5; padding: 20px 24px; background: var(--surface); }
+.study-architecture li:not(:last-child)::after { content: '→'; color: var(--blue); }
+.study-engineering { padding-bottom: 0; }
+.study-page .case-next > span { color: var(--muted); }
+.study-page button:focus-visible, .study-page a:focus-visible { outline: 3px solid #4172ba; outline-offset: 5px; }
+@media (prefers-reduced-motion: no-preference) {
+  .workflow-panel.is-entering { animation: workflow-arrive 320ms var(--ease-out); }
+  @keyframes workflow-arrive { from { opacity: .35; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+}
+@media (max-width: 900px) {
+  .study-intro { grid-template-columns: 1fr; gap: 32px; }
+  .study-intro h1 { max-width: 720px; }
+  .workflow { grid-template-columns: 1fr; gap: 20px; }
+  .workflow-ready .workflow-controls { display: grid; grid-template-columns: 1fr 1fr; }
+  .workflow-stage { min-height: 340px; }
+}
+@media (max-width: 650px) {
+  .study-hero { padding-bottom: 40px; }
+  .study-intro { padding-block: 32px 36px; }
+  .study-intro h1 { font-size: clamp(38px, 11vw, 64px); }
+  .study-workflow, .study-contributions { padding-block: 64px; }
+  .workflow { margin-top: 32px; }
+  .workflow-controls button { padding: 12px; gap: 10px; min-height: 66px; font-size: 14px; }
+  .workflow-controls button > span:last-child { display: none; }
+  .workflow-map { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 28px; }
+  .workflow-map li { font-size: 13px; padding-top: 12px; }
+  .workflow-stage { padding: 24px; min-height: 0; }
+  .study-contribution-list { gap: 36px; margin-top: 36px; }
+  .study-contribution-list article { grid-template-columns: 1fr; gap: 16px; }
+  .study-architecture { display: grid; grid-template-columns: 1fr; }
+  .study-architecture li { justify-content: space-between; }
+  .study-architecture li:not(:last-child)::after { content: '↓'; }
+}

@@ -760,6 +760,32 @@ a {
 .archive-grid {
   row-gap: 48px;
 }
+.archive-sort { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 36px; font-size: 14px; }
+.archive-sort > span { margin-right: 8px; color: var(--muted); }
+.archive-sort button { min-height: 44px; padding: 10px 18px; border: 0; background: var(--surface); color: var(--ink); }
+.archive-sort button[aria-pressed="true"] { background: var(--blue); color: var(--paper); }
+.archive-sort button:focus-visible { outline: 3px solid #4172ba; outline-offset: 3px; }
+.archive-sort + .archive-toolbar { margin-top: 20px; }
+.archive-sort[hidden], [data-category-groups][hidden], [data-date-grid][hidden] { display: none; }
+[data-date-grid] .project-partner { font-size: 14px; color: var(--muted); }
+.project-group { margin-top: 80px; }
+.project-group[hidden] { display: none; }
+.project-group-heading { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 36px; align-items: start; }
+.project-group-heading h2 { font-size: clamp(30px, 3.5vw, 48px); font-weight: 400; line-height: 1.1; letter-spacing: -.055em; }
+.project-group-heading p { max-width: 480px; font-size: 16px; line-height: 1.65; color: var(--muted); }
+.project-group .project-partner { display: block; font-size: 14px; color: var(--muted); }
+.project-group--client .work-caption { flex-wrap: wrap; }
+.project-group--client .work-caption h3 { flex-basis: 100%; }
+.project-group--client .work-kind { display: none; }
+.work-depth { display: inline-flex; align-items: center; min-height: 44px; margin-top: 10px; color: var(--blue); font-size: 15px; }
+.work-date { margin-top: 12px; font-size: 14px; line-height: 1.5; color: var(--muted); }
+/* Sky blue sampled from Alur's project screenshot. */
+[data-project="alur"] { --project-bg: #5b9ee2; }
+.archive-grid .work-caption { flex-wrap: wrap; }
+@media (max-width: 650px) {
+  .project-group { margin-top: 56px; }
+  .project-group-heading { grid-template-columns: 1fr; gap: 18px; margin-bottom: 28px; }
+}
 .archive-grid .work-image {
   aspect-ratio: 1.6;
 }

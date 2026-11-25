@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Automated Grading case study | Kenvara Solivo</title>
+    <meta name="description" content="A solo-built grading MVP combining isolated code tests, rubric-based AI assessment, and lecturer review. Case study by Kenvara Solivo." />
+    <meta property="og:title" content="Automated Grading case study | Kenvara Solivo" />
+    <meta property="og:description" content="A solo-built grading MVP combining isolated code tests, rubric-based AI assessment, and lecturer review. Case study by Kenvara Solivo." />
+    <meta property="og:type" content="article" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/src/editorial.css" />
+    <link rel="stylesheet" href="/src/case-study.css" />
+    <link rel="stylesheet" href="/src/study-details.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script src="/page-ready.js"></script>
+  </head>
+  <body data-project="robustabgabe" class="case-page study-page">
+    <div class="page-loader" role="status" aria-label="Loading page">
+      <span aria-hidden="true">kenvarasolivo<span class="wordmark-dot"></span></span>
+      <span class="page-loader-line" aria-hidden="true"></span>
+    </div>
+    <a href="#main" class="case-skip" data-i18n="skip">Skip to content</a>
+    <header class="editorial-nav">
+      <nav class="shell nav-inner" aria-label="Primary">
+        <a class="wordmark" href="index.html">kenvarasolivo<span class="wordmark-dot" aria-hidden="true"></span></a>
+        <div class="nav-pages">
+          <a href="index.html" data-i18n="edit.main">Main</a
+          ><a href="projects.html" data-i18n="edit.archive">Archive</a
+          ><a href="about.html" data-i18n="nav.aboutMe">About me</a>
+        </div>
+        <div class="nav-end">
+          <div
+            class="language"
+            data-lang-switch
+            role="group"
+            aria-label="Language"
+          >
+            <button type="button" data-lang="en" aria-label="English">EN</button
+            ><button type="button" data-lang="de" aria-label="Deutsch">
+              DE
+            </button>
+          </div>
+          <a class="nav-contact" href="#contact" aria-label="Contact">↗</a>
+        </div>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="study-hero case-container">
+        <a href="projects.html" class="case-back" data-i18n="study.back">← Back to projects</a>
+        <div class="study-intro">
+          <div><h1>Automated Grading</h1><p data-i18n="study.grading.role" class="case-role">Solo university project · Full-stack &amp; Applied AI</p><p class="case-date"><time datetime="2026" data-i18n="date.robustabgabe">2026</time></p></div>
+          <div><p data-i18n="study.grading.lede" class="case-lede">From submission to a reviewable grade.</p><p data-i18n="study.grading.summary" class="case-summary">I designed and built an assessment workflow for programming assignments from end to end. It turns assignment sheets into rubrics, runs code in Docker, and drafts feedback for a lecturer to review.</p><a class="case-button case-button-primary" href="#story" data-i18n="study.read">Explore the case study</a></div>
+        </div>
+        <figure class="study-cover">
+          <img src="images/project/robustabgabe.webp" width="1600" height="786" alt="Automated Grading project overview" fetchpriority="high" decoding="async" />
+          <figcaption data-i18n="study.grading.caption">Project workflow overview. The walkthrough below focuses on the working parse, execute, grade, and review path.</figcaption>
+        </figure>
+      </section>
+      <section class="case-facts" aria-label="Project facts">
+        <div class="case-container case-facts-grid">
+          <div><span data-i18n="study.team">Context</span><strong data-i18n="study.grading.team">Built independently · FH Aachen practice project</strong></div>
+          <div><span data-i18n="case.scope">Scope</span><strong data-i18n="study.grading.scope">Product · UX · Frontend · Backend · AI pipeline</strong></div>
+          <div><span data-i18n="case.stack">Built with</span><strong>Python · FastAPI · LangGraph · Docker · JavaScript</strong></div>
+        </div>
+      </section>
+      <section class="case-story" id="story">
+        <div class="case-container case-story-grid">
+          <div><h2 data-i18n="study.grading.problemTitle">Make grading inspectable.</h2></div>
+          <div class="case-story-copy"><p data-i18n="study.grading.problem">A programming submission can contain working code, failing tests, and written explanations. These need different kinds of assessment. I built a workflow that keeps test evidence, rubric criteria, and feedback together, with a lecturer making the final decision.</p></div>
+        </div>
+      </section>
+      <section class="study-workflow" aria-labelledby="workflow-heading">
+        <div class="case-container">
+          <h2 data-i18n="study.grading.workflowTitle" id="workflow-heading">Evidence before a grade.</h2>
+          <p data-i18n="study.grading.workflowIntro" class="study-section-intro">Explore the core assessment path. Every automated result remains a draft until lecturer approval.</p>
+          <div class="workflow" data-workflow>
+            <div class="workflow-controls" role="group" aria-label="Explore workflow">
+              <button type="button" data-workflow-step="0" aria-controls="workflow-panel-0" aria-pressed="true"><span aria-hidden="true" class="workflow-indicator"></span><span data-i18n="study.grading.step0.name">Define the rubric</span><span aria-hidden="true">↗</span></button>
+              <button type="button" data-workflow-step="1" aria-controls="workflow-panel-1" aria-pressed="false"><span aria-hidden="true" class="workflow-indicator"></span><span data-i18n="study.grading.step1.name">Run the tests</span><span aria-hidden="true">↗</span></button>
+              <button type="button" data-workflow-step="2" aria-controls="workflow-panel-2" aria-pressed="false"><span aria-hidden="true" class="workflow-indicator"></span><span data-i18n="study.grading.step2.name">Draft assessment</span><span aria-hidden="true">↗</span></button>
+              <button type="button" data-workflow-step="3" aria-controls="workflow-panel-3" aria-pressed="false"><span aria-hidden="true" class="workflow-indicator"></span><span data-i18n="study.grading.step3.name">Lecturer review</span><span aria-hidden="true">↗</span></button>
+            </div>
+            <div class="workflow-stage">
+              <ol class="workflow-map" aria-label="Workflow illustration"><li data-workflow-node="0" class="is-current"><span data-i18n="study.grading.step0.name">Define the rubric</span></li><li data-workflow-node="1"><span data-i18n="study.grading.step1.name">Run the tests</span></li><li data-workflow-node="2"><span data-i18n="study.grading.step2.name">Draft assessment</span></li><li data-workflow-node="3"><span data-i18n="study.grading.step3.name">Lecturer review</span></li></ol>
+              <section id="workflow-panel-0" class="workflow-panel" data-workflow-panel="0" aria-labelledby="workflow-title-0">
+                <p class="workflow-artifact" data-i18n="study.grading.step0.artifact">Assignment PDF + lecturer tests → reviewed rubric</p>
+                <h3 id="workflow-title-0" data-i18n="study.grading.step0.title">Make the criteria explicit.</h3>
+                <p data-i18n="study.grading.step0.body">The parser turns the assignment PDF into a structured rubric. A lecturer reviews the criteria and points, or imports an existing rubric, before submissions are assessed.</p>
+              </section>
+              <section id="workflow-panel-1" class="workflow-panel" data-workflow-panel="1" aria-labelledby="workflow-title-1">
+                <p class="workflow-artifact" data-i18n="study.grading.step1.artifact">Passed tests / runnable tests × criterion points</p>
+                <h3 id="workflow-title-1" data-i18n="study.grading.step1.title">Let tests determine code scores.</h3>
+                <p data-i18n="study.grading.step1.body">Python or Java submissions run against the lecturer’s tests in an isolated Docker container. Deterministic points come from passed versus runnable tests; the language model cannot change that score.</p>
+              </section>
+              <section id="workflow-panel-2" class="workflow-panel" data-workflow-panel="2" aria-labelledby="workflow-title-2">
+                <p class="workflow-artifact" data-i18n="study.grading.step2.artifact">Rubric + evidence → bounded awards + feedback</p>
+                <h3 id="workflow-title-2" data-i18n="study.grading.step2.title">Use AI where interpretation helps.</h3>
+                <p data-i18n="study.grading.step2.body">The model assesses written answers against the rubric and explains failing traces. Awards are bounded by criterion limits. A verifier checks the draft against the evidence and flags uncertainty for review.</p>
+              </section>
+              <section id="workflow-panel-3" class="workflow-panel" data-workflow-panel="3" aria-labelledby="workflow-title-3">
+                <p class="workflow-artifact" data-i18n="study.grading.step3.artifact">Automated draft → review → approved result</p>
+                <h3 id="workflow-title-3" data-i18n="study.grading.step3.title">Keep the final decision human.</h3>
+                <p data-i18n="study.grading.step3.body">The lecturer inspects evidence, reviews flagged criteria, edits the draft when needed, and approves the result. A generated assessment is not an official grade on its own.</p>
+              </section>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="study-contributions">
+        <div class="case-container">
+          <h2 data-i18n="study.grading.contributionTitle">Built from end to end.</h2>
+          <div class="study-contribution-list">
+            <article>
+              <h3 data-i18n="study.grading.contribution0.title">Design both sides</h3>
+              <p data-i18n="study.grading.contribution0.body">Designed and implemented student submission flows and the lecturer workspace: module selection, assignment setup, rubric editing, review queues, and result history.</p>
+            </article>
+            <article>
+              <h3 data-i18n="study.grading.contribution1.title">Build the assessment pipeline</h3>
+              <p data-i18n="study.grading.contribution1.body">Implemented the LangGraph pipeline, structured rubric parsing, Python and Java test execution, selective model assessment, and evidence verification behind a FastAPI backend.</p>
+            </article>
+            <article>
+              <h3 data-i18n="study.grading.contribution2.title">Make results reviewable</h3>
+              <p data-i18n="study.grading.contribution2.body">Connected test evidence and criterion-level feedback to the review interface. Preserved deterministic scoring and made uncertain or disputed criteria visible for lecturer review.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="case-story study-engineering">
+        <div class="case-container">
+          <div class="case-story-grid"><div><h2 data-i18n="study.grading.engineeringTitle">Two kinds of assessment.</h2></div><div class="case-story-copy"><p data-i18n="study.grading.engineering">Test-based criteria use deterministic scoring. Written answers and failure explanations use the model selectively. LangGraph coordinates the stages; FastAPI serves the API and web interface. Keeping these responsibilities separate makes it possible to inspect how a draft was produced.</p></div></div>
+          <ol class="study-architecture" aria-label="Architecture overview"><li data-i18n="study.grading.architecture0">Web workspace</li><li data-i18n="study.grading.architecture1">FastAPI</li><li data-i18n="study.grading.architecture2">LangGraph</li><li data-i18n="study.grading.architecture3">Docker tests / LLM</li><li data-i18n="study.grading.architecture4">Lecturer approval</li></ol>
+        </div>
+      </section>
+      <section class="case-close">
+        <div class="case-container case-close-grid">
+          <div><h2 data-i18n="study.grading.statusTitle">A working assessment MVP.</h2><p data-i18n="study.grading.status">The core parse, execute, and grade flow works end to end for Python, Java, and written answers. This remains a university MVP with lecturer review. Production authentication and infrastructure self-healing are outside the implemented core described here.</p></div>
+          <aside class="case-next"><span data-i18n="study.next">Next case study</span><a href="alur-sekolah.html">Alur Sekolah ↗</a></aside>
+        </div>
+      </section>
+    </main>
+    <footer id="contact" class="case-footer">
+      <div class="case-container">
+        <span>© 2026 Kenvara Solivo</span
+        ><a href="mailto:kenvara.solivo@gmail.com" data-i18n="case.contact"
+          >Contact</a
+        ><a href="index.html#work" data-i18n="case.all">Selected work</a>
+      </div>
+    </footer>
+    <script type="module" src="/src/case-study.js"></script>
+  </body>
+</html>

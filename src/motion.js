@@ -27,6 +27,8 @@ if ('IntersectionObserver' in window && 'animate' in Element.prototype) {
     '.journey-heading', '.journey-place', '.values-grid > div',
     '.approach-section h2', '.approach-list article > *', '.contact-title', '.contact-bottom > *', '.case-story-grid',
     '.case-decision-grid article', '.case-close-grid',
+    '.study-contribution-list article', '.workflow-controls > button',
+    '.workflow-stage', '.study-architecture > li',
   ].join(',')).forEach((element) => observer.observe(element));
 
   reducedMotion.addEventListener('change', () => {
